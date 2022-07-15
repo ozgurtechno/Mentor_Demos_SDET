@@ -12,7 +12,7 @@ public class BaseStaticDriver {
     static
     {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
         driver = new ChromeDriver();
         //driver.manage().window().maximize(); // max
         driver.manage().deleteAllCookies();  //
