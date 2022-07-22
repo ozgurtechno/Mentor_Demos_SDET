@@ -1,5 +1,6 @@
 package Projects.project2;
 
+import Utils.BaseStaticDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,8 @@ import org.testng.annotations.Test;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Project2 {
+
+public class Project2 extends BaseStaticDriver {
 
     @Test
     public void test() {
@@ -32,13 +34,19 @@ public class Project2 {
         WebElement signInButton = driver.findElement(By.cssSelector("input[value='Sign in']"));
         signInButton.click();
 
+        Bekle(2);
+
         //     Click on Addresses
         WebElement addresses = driver.findElement(By.cssSelector("a[data-test='addresses']"));
         addresses.click();
 
+        Bekle(2);
+
         //     Click on new address button
         WebElement newAddress = driver.findElement(By.cssSelector("a[data-test='create']"));
         newAddress.click();
+
+        Bekle(2);
 
         //     Enter the first name "Fernando"
         WebElement firstName = driver.findElement(By.id("address_first_name"));
@@ -60,6 +68,8 @@ public class Project2 {
         WebElement city = driver.findElement(By.id("address_city"));
         city.sendKeys("Liverpool");
 
+        Bekle(2);
+
         //     Choose a RANDOM option from the state dropdown
         Select stateDropdown = new Select(driver.findElement(By.id("address_state")));
         stateDropdown.selectByIndex(new Random().nextInt(52));
@@ -72,6 +82,8 @@ public class Project2 {
         WebElement pickCountry = driver.findElement(By.id("address_country_us"));
         pickCountry.click();
 
+        Bekle(2);
+
         //     Enter the birthday "03/20/1984"
         WebElement birthDay = driver.findElement(By.id("address_birthday"));
         birthDay.sendKeys("1984/03/20");
@@ -79,6 +91,8 @@ public class Project2 {
         //     Enter the age "36"
         WebElement addressAge = driver.findElement(By.id("address_age"));
         addressAge.sendKeys("36");
+
+        Bekle(2);
 
         //     Enter the WebSite "https://www.google.com/"
         WebElement webSite = driver.findElement(By.id("address_website"));
@@ -93,6 +107,8 @@ public class Project2 {
         WebElement dance = driver.findElement(By.id("address_interest_dance"));
         climb.click();
         dance.click();
+
+        Bekle(2);
 
         //     Enter the Note "Never Back Down"
         WebElement note = driver.findElement(By.id("address_note"));
@@ -117,6 +133,8 @@ public class Project2 {
         //     Click on Addresses
         WebElement addresses2 = driver.findElement(By.cssSelector("a[data-test='addresses']"));
         addresses2.click();
+
+        Bekle(2);
 
         //     Click on Edit button
         WebElement editButton = driver.findElement(By.cssSelector("tr:nth-child(1) > td:nth-child(6) > a"));
