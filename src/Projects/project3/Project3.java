@@ -26,9 +26,9 @@ public class Project3 {
         WebElement addToCart_eBook = driver.findElement(By.xpath("//h4[text()='Demo eBook']/following-sibling::button"));
         addToCart_eBook.click();
 
-        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));
-        wait.until(ExpectedConditions.visibilityOf(iframe));
-        driver.switchTo().frame(iframe);
+        WebElement iframe1 = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));
+        wait.until(ExpectedConditions.visibilityOf(iframe1));
+        driver.switchTo().frame(iframe1);
 
         WebElement cartItemNo_iFrame = driver.findElement(By.xpath("//div[@class='Fixed-Actions Desktop-Only']//span"));
 
