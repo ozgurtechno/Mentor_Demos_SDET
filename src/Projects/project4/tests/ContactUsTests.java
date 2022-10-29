@@ -2,8 +2,8 @@ package Projects.project4.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
-import project14.solution.pages.ContactUsPage;
-import project14.solution.pages.HomePage;
+import Projects.project4.pages.ContactUsPage;
+import Projects.project4.pages.HomePage;
 
 public class ContactUsTests {
 

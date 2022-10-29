@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DemoSuite2">
+
+    <test name="OrangeHRMMyInfo" preserve-order="true">
+        <!-- parametreler -->
+        <parameter name="username" value="Admin"/>
+        <parameter name="password" value="admin123"/>
+
+        <!-- hangi gruplar çalıştırılacak-->
+        <groups>
+            <run>
+                <include name="login"/>
+                <include name="Full_Test"/>
+            </run>
+            <dependencies>
+                <group name="Full_Test" depends-on="login" />
+            </dependencies>
+        </groups>
+
+        <!--çalışcak classların yazıldığı bölüm-->
+        <classes>
+            <class name="XML.OrangeHRM"/>
+        </classes>
+    </test>
+
+</suite>
