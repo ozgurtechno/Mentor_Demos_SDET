@@ -42,4 +42,6 @@ public class BrowserStackSetup {
         objBrowserStackSignUpPage.enterBusinessEmail("TestUser@gmail.com");
         objBrowserStackSignUpPage.enterPasswrod("TestUserPassword");
     }
+
+
 }

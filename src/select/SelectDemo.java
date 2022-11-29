@@ -1,7 +1,7 @@
 package select;
 
 import Utils.BaseStaticDriver;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class SelectDemo extends BaseStaticDriver {
 

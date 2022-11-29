@@ -19,8 +19,6 @@ public class WaitDemo extends BaseStaticDriver {
 
         //Declare a Webdriver Wait
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //Wait until presence of container
-        wait.until(driver -> ExpectedConditions.presenceOfElementLocated(By.cssSelector(".demo-container.size-narrow")).apply(driver));
 
         //Get the selected date text before AJAX call
         String selectedDateTextBeforeAjaxCall = driver.findElement(By.cssSelector("#ctl00_ContentPlaceholder1_Label1")).getText().trim();
@@ -35,21 +33,19 @@ public class WaitDemo extends BaseStaticDriver {
         thirdDayOfMonth.click();
 
         //Wait until invisibility of loader
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(
-                driver -> ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".raDiv")).apply(driver));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".raDiv")));
         //Wait until visibility of selected date text
         //Actually it is not necessary, I added this control to see an example of visibilityOfElementLocated usage.
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver ->
-                ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#ctl00_ContentPlaceholder1_Label1")).apply(driver));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#ctl00_ContentPlaceholder1_Label1")));
 
         //Get the selected date text after AJAX call
-        String selectedDateTextAfterAjaxCall = driver.findElement(By.cssSelector("#ctl00_ContentPlaceholder1_Label1")).getText().trim();
+        String text = driver.findElement(By.cssSelector("#ctl00_ContentPlaceholder1_Label1")).getText().trim();
 
         //Print selectedDateTextAfterAjaxCall to the console
-        System.out.println("selectedDateTextAfterAjaxCall: " + selectedDateTextAfterAjaxCall + "\n");
+        System.out.println("selectedDateTextAfterAjaxCall: " + text + "\n");
 
         //Check the Actual and Expected Text
-        Assert.assertEquals("Wednesday, August 3, 2022", selectedDateTextAfterAjaxCall);
+        Assert.assertEquals("Thursday, November 3, 2022", text);
 
         driver.quit();
     }

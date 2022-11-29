@@ -1,7 +1,6 @@
 package POM.pageFactory.pages;
 import static org.testng.Assert.assertEquals;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +26,7 @@ public class BrowserStackSignUpPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void veryHeader() {
+    public void verifyHeader() {
         String getheadertext = Header.getText().trim();
         assertEquals("Create a FREE Account", getheadertext);
     }

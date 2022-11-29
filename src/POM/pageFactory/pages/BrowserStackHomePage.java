@@ -17,7 +17,7 @@ public class BrowserStackHomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void veryHeader() {
+    public void verifyHeader() {
         String getheadertext = Header.getText();
         assertEquals("App & Browser Testing Made Easy", getheadertext);
     }

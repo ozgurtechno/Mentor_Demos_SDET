@@ -1,7 +1,6 @@
 package locators;
 
 import Utils.BaseStaticDriver;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -45,7 +44,7 @@ public class XPathLocator extends BaseStaticDriver {
 
     }
 
-    @Test
+
     public void locatorTest(){
 
     }
